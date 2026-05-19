@@ -1,0 +1,17 @@
+# Windows temporary files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDEs and editors
+.idea/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln
+*.docstates
+
+# Roblox specific temporary or build files (if any)
+*.log
+*.tmp

@@ -15,11 +15,11 @@ local PALETTE = {
 	Color3.fromRGB(40, 130, 140)     -- Pastel Teal (softer cyan)
 }
 
--- Settings (tuned for smooth, comfortable ambient transitions)
-local COLOR_CYCLE_SPEED = 0.12 -- Speed of color fading (slightly slower for maximum comfort)
+-- Settings (tuned for a beautiful, bright showroom atmosphere)
+local COLOR_CYCLE_SPEED = 0.12 -- Speed of color fading
 local PULSE_SPEED = 1.2 -- Smooth breathing rhythm
-local MIN_BRIGHTNESS = 0.3 -- Low minimum to avoid blinding contrast
-local MAX_BRIGHTNESS = 1.6 -- Soft maximum brightness (reduced from 3.5 to keep colors warm and comfortable)
+local MIN_BRIGHTNESS = 1.0 -- Increased from 0.3 for a much brighter base light level
+local MAX_BRIGHTNESS = 2.8 -- Increased from 1.6 to make the local lights shine beautifully bright
 
 -- Gather lights and neon parts
 local pulseLights = {}
@@ -47,7 +47,7 @@ for _, child in ipairs(lobby:GetDescendants()) do
 	end
 end
 
-print("[LobbyLightAnimator] Animating " .. #pulseLights .. " lights and " .. #neonParts .. " neon elements with desaturated pastel hues!")
+print("[LobbyLightAnimator] Animating " .. #pulseLights .. " lights and " .. #neonParts .. " neon elements with brighter, vibrant, comfortable ambient hues!")
 
 -- Color cycling variables
 local colorIndex = 1

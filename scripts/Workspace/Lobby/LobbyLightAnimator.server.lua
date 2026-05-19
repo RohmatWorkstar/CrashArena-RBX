@@ -6,20 +6,20 @@ local RunService = game:GetService("RunService")
 
 local lobby = script.Parent
 
--- Premium nightclub color palette (very smooth, luxury lounge vibes)
+-- Soft, subdued, pastel nightclub color palette (very relaxed, high-end lounge vibes)
 local PALETTE = {
-	Color3.fromRGB(0, 191, 255),    -- Cyan (Deep Sky Blue)
-	Color3.fromRGB(138, 43, 226),   -- Blue Violet
-	Color3.fromRGB(255, 0, 127),    -- Rose/Pink Magenta
-	Color3.fromRGB(75, 0, 130),     -- Indigo
-	Color3.fromRGB(0, 255, 255)     -- Bright Cyan
+	Color3.fromRGB(30, 110, 150),    -- Soft Steel Blue (subdued cyan)
+	Color3.fromRGB(90, 50, 140),     -- Soft Muted Violet
+	Color3.fromRGB(140, 40, 100),    -- Soft Rose Gold / Wine Magenta
+	Color3.fromRGB(50, 40, 110),     -- Muted Twilight Indigo
+	Color3.fromRGB(40, 130, 140)     -- Pastel Teal (softer cyan)
 }
 
--- Settings
-local COLOR_CYCLE_SPEED = 0.15 -- Speed of color fading (higher = faster, 0.15 is very relaxed)
-local PULSE_SPEED = 1.5 -- Speed of brightness pulsing (smooth breathing rhythm)
-local MIN_BRIGHTNESS = 0.5
-local MAX_BRIGHTNESS = 3.5
+-- Settings (tuned for smooth, comfortable ambient transitions)
+local COLOR_CYCLE_SPEED = 0.12 -- Speed of color fading (slightly slower for maximum comfort)
+local PULSE_SPEED = 1.2 -- Smooth breathing rhythm
+local MIN_BRIGHTNESS = 0.3 -- Low minimum to avoid blinding contrast
+local MAX_BRIGHTNESS = 1.6 -- Soft maximum brightness (reduced from 3.5 to keep colors warm and comfortable)
 
 -- Gather lights and neon parts
 local pulseLights = {}
@@ -47,7 +47,7 @@ for _, child in ipairs(lobby:GetDescendants()) do
 	end
 end
 
-print("[LobbyLightAnimator] Animating " .. #pulseLights .. " lights and " .. #neonParts .. " neon elements!")
+print("[LobbyLightAnimator] Animating " .. #pulseLights .. " lights and " .. #neonParts .. " neon elements with desaturated pastel hues!")
 
 -- Color cycling variables
 local colorIndex = 1
@@ -73,7 +73,7 @@ RunService.Heartbeat:Connect(function(dt)
 	-- 2. Smoothly pulse brightness using sine wave
 	local t = os.clock()
 	local pulseMultiplier = (math.sin(t * PULSE_SPEED) + 1) / 2 -- Ranges from 0 to 1
-	local currentBrightness = MIN_BRIGHTNESS + (pulseMultiplier * (MAX_BRIGHTNESS - MIN_BRIGNTNESS or 3.0)) -- Fix typo if any
+	local currentBrightness = MIN_BRIGHTNESS + (pulseMultiplier * (MAX_BRIGHTNESS - MIN_BRIGHTNESS))
 	
 	for _, lightData in ipairs(pulseLights) do
 		local light = lightData.instance

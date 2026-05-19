@@ -1,0 +1,16 @@
+{
+  "name": "CrashArena",
+  "tree": {
+    "$className": "DataModel",
+    "Workspace": {
+      "$className": "Workspace",
+      "$path": "scripts/Workspace",
+      "$ignoreUnknownInstances": true
+    },
+    "ServerStorage": {
+      "$className": "ServerStorage",
+      "$path": "scripts/ServerStorage",
+      "$ignoreUnknownInstances": true
+    }
+  }
+}
